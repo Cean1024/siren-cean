@@ -2,7 +2,7 @@ TEMPLATE = app
 CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
-
+LIBS += -lblis -lr2ssp -lr2ad3  -lr2vt4 -lztvad -lopus -lasound -lpthread
 INCLUDEPATH += $$PWD/include $$PWD/thirdparty/support/include $$PWD/thirdparty/libjsonc/include
 SOURCES += main.cpp \
     src/legacy/r2math.cpp \
@@ -29,7 +29,18 @@ SOURCES += main.cpp \
     src/siren_preprocessor.cpp \
     src/siren_processor.cpp \
     src/siren_proxy.cpp \
-    src/sutils.cpp
+    src/sutils.cpp \
+    thirdparty/libjsonc/src/arraylist.c \
+    thirdparty/libjsonc/src/debug.c \
+    thirdparty/libjsonc/src/json_c_version.c \
+    thirdparty/libjsonc/src/json_object.c \
+    thirdparty/libjsonc/src/json_object_iterator.c \
+    thirdparty/libjsonc/src/json_tokener.c \
+    thirdparty/libjsonc/src/json_util.c \
+    thirdparty/libjsonc/src/libjson.c \
+    thirdparty/libjsonc/src/linkhash.c \
+    thirdparty/libjsonc/src/printbuf.c \
+    thirdparty/libjsonc/src/random_seed.c
 
 include(deployment.pri)
 qtcAddDeployment()
